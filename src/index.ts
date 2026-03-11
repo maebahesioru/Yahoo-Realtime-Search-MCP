@@ -32,7 +32,7 @@ function createServer() {
             },
             results: {
               type: "number",
-              description: "取得件数（最大40、デフォルト: 20）",
+              description: "取得件数（最大40、デフォルト: 40）",
             },
             media_only: {
               type: "boolean",
@@ -54,7 +54,7 @@ function createServer() {
       throw new Error(`Unknown tool: ${req.params.name}`);
     }
 
-    const { query, sort = "popular", results = 20, media_only = false, cursor } =
+    const { query, sort = "popular", results = 40, media_only = false, cursor } =
       req.params.arguments as {
         query: string;
         sort?: string;
